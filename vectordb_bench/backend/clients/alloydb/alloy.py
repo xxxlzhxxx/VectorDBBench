@@ -71,10 +71,12 @@ class alloyDB(VectorDB):
         conn.autocommit = False
         cursor = conn.cursor()
         cursor.execute("CREATE EXTENSION IF NOT EXISTS vector;")
-        conn.commit()
+    
         register_vector(conn)
-        
+        print("ok")
         #cursor.execute(';')
+        assert conn is not None, "Connection is not initialized"
+        assert cursor is not None, "Cursor is not initialized"
         return conn, cursor
 
 
