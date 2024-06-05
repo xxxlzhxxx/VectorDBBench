@@ -20,8 +20,8 @@ class PgVectorConfigDict(TypedDict):
 
 class PgVectorConfig(DBConfig):
     user_name: SecretStr = SecretStr("postgres")
-    password: SecretStr
-    host: str = "localhost"
+    password = "mysecretpassword"
+    host: str = "10.100.0.10"
     port: int = 5432
     db_name: str
 

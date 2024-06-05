@@ -5,7 +5,7 @@ from vectordb_bench.backend.clients.api import DBCaseConfig, DBConfig, IndexType
 
 user = 'postgres'
 password = 'mysecretpassword'
-host = 'localhost'
+host = '10.100.0.10'
 port = '5432'
 dbname = 'test_db'
 
