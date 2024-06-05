@@ -69,8 +69,11 @@ class alloyDB(VectorDB):
             password = kwargs['password']
         )
         conn.autocommit = False
-        register_vector(conn)
         cursor = conn.cursor()
+        cursor.execute("CREATE EXTENSION IF NOT EXISTS vector;")
+        conn.commit()
+        register_vector(conn)
+        
         #cursor.execute(';')
         return conn, cursor
 
