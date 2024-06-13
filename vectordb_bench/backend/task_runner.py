@@ -142,7 +142,7 @@ class CaseRunner(BaseModel):
             self._init_search_runner()
     
             m.qps, m.conc_num_list, m.conc_qps_list, m.conc_latency_p99_list = self._conc_search()
-            m.recall, m.serial_latency_p99 = self._serial_search()
+            m.recall, m.ndcg, m.serial_latency_p99 = self._serial_search()
             
         except Exception as e:
             log.warning(f"Failed to run performance case, reason = {e}")
