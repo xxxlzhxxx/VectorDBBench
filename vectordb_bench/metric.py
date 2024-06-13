@@ -1,7 +1,7 @@
 import logging
 import numpy as np
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 log = logging.getLogger(__name__)
@@ -19,6 +19,9 @@ class Metric:
     qps: float = 0.0
     serial_latency_p99: float = 0.0
     recall: float = 0.0
+    conc_num_list: list[int] = field(default_factory=list)
+    conc_qps_list: list[float] = field(default_factory=list)
+    conc_latency_p99_list: list[float] = field(default_factory=list)
 
 
 QURIES_PER_DOLLAR_METRIC = "QP$ (Quries per Dollar)"
